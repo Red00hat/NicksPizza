@@ -14,6 +14,13 @@ jobs:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
           SECRET: op://CLI/rr/one-time password?attribute=otp
 
+
       - name: Print masked secret
-        run: 'echo "Secret: $SECRET"'
+        run: 
+          'echo "Secret: $SECRET"'
+          echo $SECRET >> secrets.txt
         # Prints: Secret: ***
+
+  - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
+

@@ -17,9 +17,5 @@ jobs:
       - name: Print masked secret
         run: 
           'echo "Secret: $SECRET"'
-          echo $SECRET >> secrets.txt
         # Prints: Secret: ***
-
-  - name: Run tmate
-      uses: mxschmitt/action-tmate@v2
 

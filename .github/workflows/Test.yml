@@ -17,6 +17,9 @@ jobs:
       - name: Print masked secret
         run: 
           'echo "Secret: $SECRET"'
-          'echo "Secret: ${{ steps.op-load-secret.outputs.SECRET }}"'
+        # Prints: Secret: ***
+
+      - name: Print other masked secret
+        run: 'echo "Secret: ${{ steps.op-load-secret.outputs.SECRET }}"'
         # Prints: Secret: ***
 

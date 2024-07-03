@@ -15,6 +15,12 @@ jobs:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
           SECRET: op://CLI/rr/one-time password?attribute=otp
 
+      - name: install 1Password CLI
+       # Installs 1Password CLI
+        run: 
+          1password/install-cli-action@v1
+
+
       - name: Print masked secret
         run: 
           'echo "Secret: $SECRET"'
